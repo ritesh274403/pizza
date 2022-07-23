@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
+/* font-family: 'PT Sans Narrow', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "PT Sans Narrow", sans-serif;
+  color: #dcdcdc;
+  font-size: 14px;
+}
+header {
+  background: black;
+  padding: 50px 90px;
+}
+.header-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.shedule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shedule img {
+  max-width: 25px;
+  margin-right: 25px;
+}
+.shedule-right .phone,
+.cart-left .amount {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.shedule-right .time {
+  color: #dcdcdc;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  transition: 0.25s;
+}
+.logo img {
+  max-width: 100px;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  text-align: right;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.cart img {
+  max-width: 35px;
+  margin-left: 25px;
+  transition: 0.1s;
+}
+.cart:hover.items {
+  color: yellow;
+  opacity: 1;
+}
+.cart:active img {
+  transform: scale(0.9);
+}
+
+.cart::after {
+  content: "0";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  color: black;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav li {
+  list-style: none;
+  margin: 0 20px;
+}
+.nav li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 3px;
+  transition: 0.25s;
+}
+.nav li a:hover {
+  color: yellow;
+}
+.nav li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+  background: white;
+}
+
+/* rtesponsive for 1200px */
+@media screen and (max-width: 1200px) {
+  header {
+    padding: 50px;
+  }
+  .nav li {
+    margin: 0 10px;
+  }
+}
+.hero {
+  min-height: 100vh;
+  background: url(./images/slide_1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.imgBx img {
+  max-width: 600px;
+  filter: drop-shadow(5px 15px 20px rgb(12, 8, 9));
+}
+.contentBx {
+  max-width: 700px;
+  margin-right: 50px;
+}
+.contentBx h1 {
+  font-size: 60px;
+  letter-spacing: 10px;
+  font-weight: 100;
+}
+.contentBx h2 {
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  border-bottom: 3px solid rgba(129, 204, 179, 0.788);
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+.contentBx p {
+  font-family: open sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.contentBx .btn {
+  padding: 10px 20px;
+  background: yellow;
+  display: inline-block;
+  color: black;
+  letter-spacing: 2px;
+  border: 2px solid yellow;
+  cursor: pointer;
+  
+}
+.contentBx .btn:hover{
+  background: transparent;
+  color: white;
+}
+/* responsive for 1024px */
+@media screen and(max-width:1024px) {
+  .header-top {
+    justify-content: center;
+  }
+  .shedule .cart {
+    display: none;
+  }
+}
+
+/* responsive for 768px */
+@media screen and(max-width:768px) {
+  header {
+    padding: 60px 20px;
+    padding-bottom: 20px;
+  }
+  .header-top {
+    margin-bottom: 0;
+  }
+  .nav {
+    display: none;
+  }
+  .menu-btn {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin: 5px;
+  }
+  .menu-btn .active span :nth-child(1) {
+    transform: rotate(45deg) translateY(5px);
+  }
+  .menu-btn .active:nth-child(2) {
+    display: none;
+  }
+  .menu-btn .active:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px);
+  }
+
+  .nav active {
+    margin: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(240, 8, 240);
+    display: block;
+  }
+  .nav li {
+    margin: 15px 0;
+  }
+  .nav li a.active::after {
+    display: none;
+  }
+}
